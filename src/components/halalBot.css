@@ -1,0 +1,147 @@
+.halalbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Floating button */
+.chat-toggle-btn {
+  background-color: #198754;
+  border: none;
+  border-radius: 50%;
+  padding: 16px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+.chat-toggle-btn:hover {
+  background-color: #157347;
+  transform: scale(1.1);
+}
+
+/* Chat window */
+.chat-window {
+  width: 320px;
+  max-height: 450px;
+  background: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid #198754;
+}
+
+/* Header */
+.chat-header {
+  background: #198754;
+  color: white;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-actions {
+  display: flex;
+  gap: 8px;
+}
+.close-btn,
+.clear-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.close-btn:hover,
+.clear-btn:hover {
+  color: #d1e7dd;
+}
+
+/* Body */
+.chat-body {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  font-size: 14px;
+}
+.message {
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+.user-msg {
+  background: #d1e7dd;
+  align-self: flex-end;
+  margin-left: auto;
+}
+.bot-msg {
+  background: #f8d7da;
+  color: #333;
+  align-self: flex-start;
+}
+.loading {
+  text-align: center;
+  color: #6c757d;
+  font-size: 13px;
+}
+
+/* Footer */
+.chat-footer {
+  display: flex;
+  border-top: 1px solid #ccc;
+  background: #fff;
+}
+.chat-input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+  font-size: 14px;
+}
+.send-btn {
+  background: #198754;
+  border: none;
+  color: white;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.send-btn:hover {
+  background: #157347;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .chat-window {
+    width: 90vw;
+    right: 5vw;
+    bottom: 10px;
+  }
+}
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(25, 135, 84, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(25, 135, 84, 0);
+  }
+}
+
+.chat-float-btn {
+  animation: pulse-glow 2.5s infinite;
+  transition: transform 0.2s ease;
+}
+
+.chat-float-btn:hover {
+  transform: scale(1.1);
+  animation: none; /* Stop pulsing on hover */
+}

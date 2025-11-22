@@ -1,0 +1,200 @@
+/* ===========================
+   🌿 Hajiyar Halal Profits - Contact Page Styling
+   =========================== */
+
+.contact-page {
+  background: linear-gradient(180deg, #f9fdfb 0%, #ffffff 100%);
+  color: #333;
+}
+
+/* ---- Header ---- */
+.contact-page h2 {
+  letter-spacing: 0.5px;
+}
+
+.contact-page p {
+  line-height: 1.7;
+}
+
+/* ---- Form Section ---- */
+.contact-page form input,
+.contact-page form textarea {
+  border-radius: 12px;
+  border: 1px solid #c8e6c9;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.contact-page form input:focus,
+.contact-page form textarea:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+}
+
+.contact-page button {
+  transition: all 0.3s ease;
+}
+
+.contact-page button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(25, 135, 84, 0.3);
+}
+
+/* ---- Info Card ---- */
+.contact-page .border.rounded-4 {
+  border-color: #e9f5ee !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-page .border.rounded-4:hover {
+  border-color: #198754 !important;
+  box-shadow: 0 8px 20px rgba(25, 135, 84, 0.15);
+}
+
+/* ---- Map ---- */
+.contact-page iframe {
+  border-radius: 15px;
+  filter: grayscale(10%) brightness(98%);
+  transition: filter 0.4s ease;
+}
+
+.contact-page iframe:hover {
+  filter: grayscale(0%) brightness(100%);
+}
+
+/* ---- Responsive Adjustments ---- */
+@media (max-width: 768px) {
+  .contact-page .text-center h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-page .form-control {
+    font-size: 0.95rem;
+  }
+
+  .contact-page iframe {
+    height: 300px;
+  }
+}
+
+/* ---- Icons ---- */
+.contact-page i.bi {
+  vertical-align: middle;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.contact-page a.text-success:hover i.bi {
+  color: #145c32;
+}
+
+/* ---- Animation Classes ---- */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(25, 135, 84, 0.15);
+}
+
+/* 🌿 Contact Page Styling */
+
+.contact-page {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fdfb;
+}
+
+/* Smooth card hover */
+.hover-scale {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(25, 135, 84, 0.25);
+}
+
+/* Lift-up hover */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(25, 135, 84, 0.15);
+}
+
+/* Contact form input styling */
+form .form-control {
+  border: 1px solid #d9f1e3;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+form .form-control:focus {
+  border-color: #198754;
+  box-shadow: 0 0 10px rgba(25, 135, 84, 0.25);
+}
+
+/* Contact info box */
+.contact-page .border {
+  border-color: rgba(25, 135, 84, 0.2) !important;
+}
+
+/* Social icons */
+.contact-page a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.contact-page a:hover {
+  transform: translateY(-3px);
+  color: #145c2d !important;
+}
+
+/* Submit button animation */
+.btn-success {
+  background-color: #198754;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-success:hover {
+  background-color: #166f47;
+  transform: translateY(-2px);
+}
+
+/* Responsive layout tweaks */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 2rem 1rem;
+  }
+  .contact-page h2 {
+    font-size: 1.8rem;
+  }
+  .contact-page iframe {
+    height: 300px;
+  }
+  .contact-page .col-lg-4,
+  .contact-page .col-lg-6 {
+    width: 100%;
+  }
+}
+
+/* Toastify tweak */
+.Toastify__toast {
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+.Toastify__toast--success {
+  background-color: #198754 !important;
+}
+.Toastify__toast--error {
+  background-color: #dc3545 !important;
+}
+/* Responsive Contact Form & Info */
+@media (max-width: 768px) {
+  .contact-section .col-md-6 {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-section iframe {
+    height: 300px !important;
+  }
+}

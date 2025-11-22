@@ -1,0 +1,155 @@
+/* Component-Specific Responsive Styles */
+
+/* 🎯 Navbar */
+.navbar {
+  min-height: 60px;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-toggler {
+  padding: 0.25rem;
+}
+
+/* 🦸‍♂️ Hero Section */
+.hero-section {
+  min-height: calc(100vh - 60px);
+  padding: 2rem 0;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+}
+
+/* 🎯 Features & Cards */
+.feature-card {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* 📝 Forms */
+.form-container {
+  padding: 1rem;
+}
+
+/* 🦶 Footer */
+.footer {
+  padding: 2rem 0;
+}
+
+/* 💬 Chat & Contact */
+.chat-widget,
+.contact-button {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* 🎯 Modal & Popups */
+.modal-content {
+  margin: 1rem;
+  max-height: calc(100vh - 2rem);
+}
+
+/* 🖼️ Image Galleries */
+.gallery-item {
+  margin-bottom: 1rem;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+  .navbar {
+    min-height: 70px;
+  }
+
+  .navbar-brand img {
+    height: 45px;
+  }
+
+  .hero-section {
+    min-height: calc(100vh - 70px);
+    padding: 3rem 0;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .feature-card {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-container {
+    padding: 2rem;
+  }
+
+  .footer {
+    padding: 3rem 0;
+  }
+
+  .chat-widget,
+  .contact-button {
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  .modal-content {
+    margin: 2rem;
+    max-height: calc(100vh - 4rem);
+  }
+
+  .gallery-item {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .navbar {
+    min-height: 80px;
+  }
+
+  .navbar-brand img {
+    height: 50px;
+  }
+
+  .hero-section {
+    min-height: calc(100vh - 80px);
+    padding: 4rem 0;
+  }
+
+  .hero-section h1 {
+    font-size: 3.5rem;
+  }
+
+  .feature-card {
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .form-container {
+    padding: 2.5rem;
+  }
+
+  .footer {
+    padding: 4rem 0;
+  }
+
+  .chat-widget,
+  .contact-button {
+    bottom: 2.5rem;
+    right: 2.5rem;
+  }
+
+  .modal-content {
+    margin: 3rem auto;
+    max-height: calc(100vh - 6rem);
+    max-width: 1200px;
+  }
+
+  .gallery-item {
+    margin-bottom: 2rem;
+  }
+}

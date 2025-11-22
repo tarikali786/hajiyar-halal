@@ -1,0 +1,152 @@
+/* Page-Specific Responsive Styles */
+
+/* 🏠 Home Page */
+.home-hero {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.featured-section {
+  padding: 2rem 0;
+}
+
+.stats-counter {
+  font-size: 2rem;
+}
+
+/* 📄 About Page */
+.about-hero {
+  padding: 3rem 1rem;
+}
+
+.team-section {
+  padding: 2rem 0;
+}
+
+.timeline-section {
+  padding-left: 1rem;
+}
+
+/* 🛠️ Services Page */
+.service-card {
+  margin-bottom: 1.5rem;
+}
+
+.pricing-table {
+  overflow-x: auto;
+}
+
+/* 📞 Contact Page */
+.contact-form {
+  padding: 1rem;
+}
+
+.contact-info {
+  margin-top: 2rem;
+}
+
+.map-container {
+  height: 300px;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+  .home-hero {
+    padding: 6rem 2rem;
+    text-align: left;
+  }
+
+  .featured-section {
+    padding: 3rem 0;
+  }
+
+  .stats-counter {
+    font-size: 2.5rem;
+  }
+
+  .about-hero {
+    padding: 4rem 2rem;
+  }
+
+  .team-section {
+    padding: 3rem 0;
+  }
+
+  .timeline-section {
+    padding-left: 2rem;
+  }
+
+  .service-card {
+    margin-bottom: 2rem;
+  }
+
+  .contact-form {
+    padding: 2rem;
+  }
+
+  .contact-info {
+    margin-top: 0;
+  }
+
+  .map-container {
+    height: 400px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .home-hero {
+    padding: 8rem 3rem;
+  }
+
+  .featured-section {
+    padding: 4rem 0;
+  }
+
+  .stats-counter {
+    font-size: 3rem;
+  }
+
+  .about-hero {
+    padding: 6rem 3rem;
+  }
+
+  .team-section {
+    padding: 4rem 0;
+  }
+
+  .timeline-section {
+    padding-left: 3rem;
+  }
+
+  .service-card {
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-form {
+    padding: 3rem;
+  }
+
+  .map-container {
+    height: 500px;
+  }
+}
+
+/* Animation Optimizations */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal {
+    animation: fadeInUp 0.6s ease-out;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    padding: 0;
+    font-size: 12pt;
+  }
+}

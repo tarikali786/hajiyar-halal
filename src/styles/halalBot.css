@@ -1,0 +1,77 @@
+.halalbot-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 340px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  background: #fff;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.halalbot-header {
+  background: #198754;
+  color: white;
+}
+
+.halalbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  background: #f9fdfb;
+  scrollbar-width: thin;
+}
+
+.message {
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  max-width: 80%;
+  font-size: 14px;
+}
+
+.message.bot {
+  background: #e8f9ee;
+  align-self: flex-start;
+  color: #155724;
+}
+
+.message.user {
+  background: #198754;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.halalbot-input {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+}
+
+.halalbot-input input {
+  border-radius: 20px;
+}
+
+.halalbot-input button {
+  border-radius: 20px;
+}
+
+/* Scrollbar */
+.halalbot-messages::-webkit-scrollbar {
+  width: 5px;
+}
+.halalbot-messages::-webkit-scrollbar-thumb {
+  background: #c5e7d0;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .halalbot-container {
+    width: 95%;
+    right: 2.5%;
+    bottom: 80px;
+  }
+}

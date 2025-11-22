@@ -1,0 +1,70 @@
+/* 🌙 Floating Action Menu Base */
+.floating-main-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #198754;
+  color: #fff;
+  font-size: 22px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 6px 25px rgba(0, 100, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.floating-main-btn:hover {
+  background: #157347;
+}
+
+/* 🌟 Menu Container */
+.floating-menu {
+  position: fixed;
+  bottom: 85px;
+  right: 28px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 15px;
+  z-index: 998;
+}
+
+/* ⚪ Buttons */
+.floating-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 100, 0, 0.3);
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .floating-main-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .floating-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
