@@ -1,115 +1,95 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-function Footer() {
+const quickLinks = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Projects", to: "/projects" },
+  { label: "Contact", to: "/contact" },
+];
+
+const Footer = () => {
   return (
-    <footer className="bg-success text-white pt-5 pb-3 mt-5" data-aos="fade-up">
-      <div className="container">
-        <div className="row gy-4">
-          {/* 🟢 Brand Section */}
-          <div className="col-md-4 text-center text-md-start">
-            <img
-              src="/assets/logo.png"
-              alt="Hajiyar Halal Profits Logo"
-              style={{
-                height: "70px",
-                width: "70px",
-                borderRadius: "50%",
-                objectFit: "cover",
-                boxShadow: "0 0 15px rgba(255,255,255,0.3)",
-              }}
-            />
-            <h5 className="fw-bold mt-3">Hajiyar Halal Profits</h5>
-            <p className="small text-light">
-              Ethical Real Estate & Halal Business with over 26 years of
-              experience — rooted in trust, transparency, and integrity.
-            </p>
-          </div>
+    <footer className="mt-16 bg-slate-950 text-slate-100">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-3 md:px-6">
+        <div>
+          <p className="text-xs uppercase tracking-[0.5em] text-brand-200">
+            Halal + Human
+          </p>
+          <h4 className="mt-3 text-2xl font-semibold">
+            Hajiyar Halal Profits
+          </h4>
+          <p className="mt-4 text-sm text-slate-400">
+            Ethical real estate, joint ventures, and business acceleration that
+            honour both faith and finance for over 26 years.
+          </p>
+        </div>
 
-          {/* 📍 Contact Section */}
-          <div className="col-md-4">
-            <h6 className="fw-bold text-uppercase mb-3">Contact Us</h6>
-            <p className="mb-1">
-              📞 <strong>Mobile:</strong> 91500 49752
-            </p>
-            <p className="mb-1">
-              💬 <strong>WhatsApp:</strong> 91500 49753
-            </p>
-            <p className="mb-1">
-              🏠 #1, Rohini Nagar, Railway Street, Opp. Hajian Provisions,{" "}
-              <br />
-              Urappakkam West, Chengalpattu – 603211
-            </p>
-            <p className="mb-0">
-              📧{" "}
-              <a
-                href="mailto:info@hajiyarhalalprofits.com"
-                className="text-white text-decoration-none"
+        <div>
+          <h5 className="text-sm font-semibold uppercase tracking-widest text-slate-300">
+            Visit Us
+          </h5>
+          <p className="mt-4 text-sm text-slate-400">
+            #1, Rohini Nagar, Railway Station Road, Opp. Hajiyar Provisions,
+            Urapakkam West, Chennai – 603211
+          </p>
+          <div className="mt-4 space-y-1 text-sm text-slate-300">
+            <p>Mobile: 91500 49752</p>
+            <p>WhatsApp: 91500 49753</p>
+            <a
+              href="mailto:info@hajiyarhalalprofits.com"
+              className="text-brand-200 underline-offset-4 hover:underline"
+            >
+              info@hajiyarhalalprofits.com
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h5 className="text-sm font-semibold uppercase tracking-widest text-slate-300">
+            Quick Links
+          </h5>
+          <div className="mt-4 grid gap-2 text-sm text-slate-300">
+            {quickLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="inline-flex items-center gap-2 text-slate-300 transition hover:text-brand-200"
               >
-                info@hajiyarhalalprofits.com
-              </a>
-            </p>
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-400"></span>
+                {link.label}
+              </Link>
+            ))}
           </div>
 
-          {/* 🔗 Quick Links */}
-          <div className="col-md-4 text-center text-md-start">
-            <h6 className="fw-bold text-uppercase mb-3">Quick Links</h6>
-            <ul className="list-unstyled">
-              <li>
-                <a href="/" className="text-white text-decoration-none">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="text-white text-decoration-none">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/services" className="text-white text-decoration-none">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-white text-decoration-none">
-                  Contact
-                </a>
-              </li>
-            </ul>
-
-            {/* 🌐 Social Icons */}
-            <div className="d-flex gap-3 mt-3">
-              <a href="https://facebook.com" className="text-white fs-5">
-                <FaFacebookF />
+          <div className="mt-6 flex gap-4">
+            {[
+              { icon: <FaFacebookF />, href: "https://facebook.com" },
+              { icon: <FaInstagram />, href: "https://instagram.com" },
+              { icon: <FaWhatsapp />, href: "https://wa.me/9150049753" },
+              { icon: <FaYoutube />, href: "https://youtube.com" },
+            ].map((item, idx) => (
+              <a
+                key={idx}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-200 transition hover:border-brand-300 hover:text-brand-200"
+              >
+                {item.icon}
               </a>
-              <a href="https://instagram.com" className="text-white fs-5">
-                <FaInstagram />
-              </a>
-              <a href="https://wa.me/9150049753" className="text-white fs-5">
-                <FaWhatsapp />
-              </a>
-              <a href="https://youtube.com" className="text-white fs-5">
-                <FaYoutube />
-              </a>
-            </div>
+            ))}
           </div>
         </div>
-
-        {/* 🔻 Divider + Copyright */}
-        <hr className="border-light mt-4" />
-        <div className="text-center small">
-          © {new Date().getFullYear()} <strong>Hajiyar Halal Profits</strong> —
-          All Rights Reserved.
-        </div>
+      </div>
+      <div className="border-t border-white/10 py-6 text-center text-xs uppercase tracking-[0.4em] text-slate-400">
+        © {new Date().getFullYear()} Hajiyar Halal Profits — Ethical Growth for
+        Every Generation
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

@@ -1,457 +1,392 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Building2,
+  Coins,
+  Users,
+  ShieldCheck,
+  Globe,
+  MessageCircle,
+  ArrowRight,
+  Sprout,
+} from "lucide-react";
 import CountUp from "react-countup";
-import "../styles/About.css"; // Reuse polished hover & animation effects
 
+const offerings = [
+  {
+    icon: <Building2 className="h-6 w-6 text-brand-600" />,
+    title: "Halal Real Estate Studio",
+    detail:
+      "DTCP layouts, villas, and commercial clusters curated with turnkey compliance & reporting.",
+  },
+  {
+    icon: <Coins className="h-6 w-6 text-brand-600" />,
+    title: "Joint Venture Structuring",
+    detail:
+      "Partner with us on land development with milestone-based payouts and real-time dashboards.",
+  },
+  {
+    icon: <ShieldCheck className="h-6 w-6 text-brand-600" />,
+    title: "Compliance Desk",
+    detail:
+      "Scholar board reviews, documentation cleanup, and riba exit strategies for families & SMEs.",
+  },
+  {
+    icon: <Users className="h-6 w-6 text-brand-600" />,
+    title: "Community Venture Acceleration",
+    detail:
+      "Incubation for women-led businesses, agri projects, and social enterprises with halal capital.",
+  },
+  {
+    icon: <Globe className="h-6 w-6 text-brand-600" />,
+    title: "NRI & GCC Concierge",
+    detail:
+      "End-to-end onboarding, e-KYC, and POA management for partners investing from abroad.",
+  },
+  {
+    icon: <Sprout className="h-6 w-6 text-brand-600" />,
+    title: "Regenerative Land Stewardship",
+    detail:
+      "Rewilding soil, water harvesting, and agri alliances that keep every acre breathing life.",
+  },
+];
+
+const process = [
+  {
+    title: "Discovery & Alignment",
+    desc: "We map faith, family, and financial goals into a clear thesis.",
+  },
+  {
+    title: "Due Diligence Sprint",
+    desc: "Legal, soil, partner, and compliance checks completed in 30-45 days.",
+  },
+  {
+    title: "Build & Report",
+    desc: "Execution pods work in shared dashboards with scholar-signed updates.",
+  },
+  {
+    title: "Profit Stewardship",
+    desc: "Milestone-based payouts with reinvestment or exit planning guidance.",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Sabah & Imran",
+    role: "Founders — Riyadh",
+    quote:
+      "Hajiyar Halal Profits helped us exit conventional loans and reinvest in a DTCP project. Payouts were punctual and documents immaculate.",
+  },
+  {
+    name: "Yousuf Ali",
+    role: "Builder — Chennai",
+    quote:
+      "Their JV structuring kept both my crews and investors confident. Transparent dashboards cut all friction.",
+  },
+  {
+    name: "Aisha Khan",
+    role: "Angel Investor — Bengaluru",
+    quote:
+      "The compliance desk cleansed my portfolio and I finally feel aligned with my values.",
+  },
+];
+
+const faqs = [
+  {
+    q: "What returns can I expect from a JV?",
+    a: "Each venture has its own projection. Historically our partners have realised 14–24% IRR depending on asset type, duration, and market movement.",
+  },
+  {
+    q: "Do you support investors abroad?",
+    a: "Yes. NRIs and GCC families can onboard remotely with notarised POA, e-KYC, and concierge updates in their timezone.",
+  },
+  {
+    q: "How do you ensure projects stay halal?",
+    a: "Every rupee is screened by scholars, zero-interest financing is enforced, and vendors undergo ethics audits before onboarding.",
+  },
+];
 
 const Services = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-
-  const services = [
-    {
-      id: 1,
-      icon: "bi-cash-coin",
-      title: "Halal Investment Plans",
-      desc: "We offer Shariah-compliant investment options ensuring ethical, transparent, and profitable growth for every investor.",
-    },
-    {
-      id: 2,
-      icon: "bi-buildings",
-      title: "Real Estate Ventures",
-      desc: "Trusted property investments built on long-term value and halal business frameworks.",
-    },
-    {
-      id: 3,
-      icon: "bi-graph-up-arrow",
-      title: "Business Consultation",
-      desc: "Guiding individuals and firms to start or grow ethical businesses aligned with Islamic principles.",
-    },
-    {
-      id: 4,
-      icon: "bi-people-fill",
-      title: "Partnership Programs",
-      desc: "Collaborate with us on joint ventures — combining expertise, trust, and shared prosperity.",
-    },
-    {
-      id: 5,
-      icon: "bi-globe2",
-      title: "Global Expansion Support",
-      desc: "Helping halal businesses grow across borders through research, compliance, and market insights.",
-    },
-    {
-      id: 6,
-      icon: "bi-shield-check",
-      title: "Halal Certification Guidance",
-      desc: "Get professional assistance in obtaining Halal certifications for your products and ventures.",
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: "Abdul Rahman",
-      role: "Investor, Chennai",
-      text: "Hajiyar Halal Profits helped me invest in land without any interest or confusion. Everything was transparent and Shariah-compliant.",
-      img: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-    },
-    {
-      name: "Fatima Noor",
-      role: "Entrepreneur, Bangalore",
-      text: "Their consultancy service helped me establish a Halal-certified brand with confidence and credibility.",
-      img: "https://cdn-icons-png.flaticon.com/512/2922/2922510.png",
-    },
-    {
-      name: "Mohammed Iqbal",
-      role: "Business Owner, Coimbatore",
-      text: "Professional, trustworthy, and deeply ethical. Truly the best partner for Halal business growth.",
-      img: "https://cdn-icons-png.flaticon.com/512/4333/4333609.png",
-    },
-  ];
-
   return (
-    <div className="services-page py-5" style={{ background: "#f9fdfb" }}>
-      <div className="container">
-        {/* Header */}
-        <div className="text-center mb-5" data-aos="fade-down">
-          <h2 className="fw-bold text-success">Our Services</h2>
-          <p className="text-muted mx-auto" style={{ maxWidth: "700px" }}>
-            At <strong>Hajiyar Halal Profits</strong>, we provide a diverse
-            range of halal business solutions designed to empower investors,
-            companies, and communities. Every service reflects our core values —
-            faith, ethics, and excellence.
+    <div className="space-y-16 bg-slate-50 pb-16">
+      <section className="bg-white pt-10">
+        <div className="mx-auto max-w-6xl px-5 pb-16 text-center lg:px-6">
+          <p className="text-xs font-semibold uppercase text-brand-600">
+            What we do
           </p>
-        </div>
-
-        {/* Service Cards */}
-        <div className="row g-4 justify-content-center">
-          {services.map((service) => (
-            <div
-              className="col-md-4 col-sm-6"
-              key={service.id}
-              data-aos="zoom-in"
+          <h1 className="mt-4 text-4xl font-semibold text-slate-900 md:text-5xl">
+            Strategies that keep your portfolio halal, human, and high-performing.
+          </h1>
+          <p className="mx-auto mt-5 max-w-3xl text-slate-600">
+            We craft bespoke ventures across real estate, ethical joint ventures, and regenerative
+            businesses—combining scholar-backed governance with modern execution pods.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              to="/contact"
+              className="inline-flex items-center rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-700"
             >
-              <div className="p-4 border rounded-4 shadow-sm h-100 bg-white text-center hover-lift">
-                <div className="text-success fs-1 mb-3">
-                  <i className={`bi ${service.icon}`}></i>
-                </div>
-                <h5 className="fw-semibold">{service.title}</h5>
-                <p className="text-muted small">{service.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Testimonials */}
-        <div className="mt-5 py-5 text-center" data-aos="fade-up">
-          <h3 className="fw-bold text-success mb-4">What Our Clients Say</h3>
-          <div className="row justify-content-center">
-            {testimonials.map((t, i) => (
-              <div
-                className="col-md-4 col-sm-6 mb-4"
-                key={i}
-                data-aos="fade-up"
-                data-aos-delay={i * 150}
-              >
-                <div className="p-4 border rounded-4 bg-white shadow-sm hover-scale h-100">
-                  <img
-                    src={t.img}
-                    alt={t.name}
-                    className="rounded-circle mb-3"
-                    style={{
-                      width: "80px",
-                      height: "80px",
-                      objectFit: "cover",
-                    }}
-                  />
-                  <p className="text-muted fst-italic mb-3">“{t.text}”</p>
-                  <h6 className="fw-bold mb-0">{t.name}</h6>
-                  <p className="text-success small">{t.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Why Choose Us */}
-        <div className="mt-5 py-5" data-aos="fade-up">
-          <h3 className="fw-bold text-success text-center mb-4">
-            Why Choose Hajiyar Halal Profits?
-          </h3>
-          <div className="row justify-content-center">
-            <div className="col-md-4 mb-3" data-aos="fade-right">
-              <div className="p-4 border rounded-4 bg-light hover-scale">
-                <i className="bi bi-check-circle-fill text-success fs-2 mb-2"></i>
-                <h6 className="fw-bold">100% Halal & Transparent</h6>
-                <p className="text-muted small">
-                  Each project is strictly audited for halal compliance and
-                  transparency in all operations.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-4 mb-3" data-aos="fade-up">
-              <div className="p-4 border rounded-4 bg-light hover-scale">
-                <i className="bi bi-graph-up text-success fs-2 mb-2"></i>
-                <h6 className="fw-bold">Sustainable Growth</h6>
-                <p className="text-muted small">
-                  We build risk-managed, ethical investment models focused on
-                  steady, long-term returns.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-4 mb-3" data-aos="fade-left">
-              <div className="p-4 border rounded-4 bg-light hover-scale">
-                <i className="bi bi-heart-fill text-success fs-2 mb-2"></i>
-                <h6 className="fw-bold">Ethics Above All</h6>
-                <p className="text-muted small">
-                  Our foundation is built on honesty, fairness, and
-                  responsibility in every decision we make.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Impact Counters */}
-        <div
-          className="impact-section text-center my-5 py-5 rounded-4 shadow-sm"
-          style={{
-            background: "linear-gradient(135deg, #f5fff7, #e6ffee)",
-          }}
-          data-aos="fade-up"
-        >
-          <h3 className="fw-bold text-success mb-4">Our Impact in Numbers</h3>
-          <div className="row justify-content-center g-4">
-            <div className="col-md-3 col-6">
-              <div className="p-4 bg-white rounded-4 shadow-sm">
-                <h2 className="fw-bold text-success mb-2">
-                  <CountUp end={100} duration={3} suffix="%" />
-                </h2>
-                <p className="text-muted mb-0">Client Satisfaction</p>
-              </div>
-            </div>
-
-            <div className="col-md-3 col-6">
-              <div className="p-4 bg-white rounded-4 shadow-sm">
-                <h2 className="fw-bold text-success mb-2">
-                  <CountUp end={25} duration={3} suffix="+" />
-                </h2>
-                <p className="text-muted mb-0">Active Halal Projects</p>
-              </div>
-            </div>
-
-            <div className="col-md-3 col-6">
-              <div className="p-4 bg-white rounded-4 shadow-sm">
-                <h2 className="fw-bold text-success mb-2">
-                  <CountUp end={15} duration={3} suffix="+" />
-                </h2>
-                <p className="text-muted mb-0">Global Partners</p>
-              </div>
-            </div>
-
-            <div className="col-md-3 col-6">
-              <div className="p-4 bg-white rounded-4 shadow-sm">
-                <h2 className="fw-bold text-success mb-2">
-                  <CountUp end={0} duration={3} suffix="%" />
-                </h2>
-                <p className="text-muted mb-0">Loss Record</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Service Process Timeline */}
-        <div
-          className="timeline-section my-5 py-5"
-          data-aos="fade-up"
-          style={{ position: "relative" }}
-        >
-          <h3 className="fw-bold text-success text-center mb-5">
-            How We Work — Our Process
-          </h3>
-          <div className="timeline position-relative">
-            <div className="timeline-line"></div>
-
-            <div className="timeline-item left" data-aos="fade-right">
-              <div className="timeline-content p-4 rounded-4 shadow-sm">
-                <h6 className="fw-bold text-success">Step 1: Consultation</h6>
-                <p className="text-muted small mb-0">
-                  We understand your goals and tailor a plan aligned with halal
-                  investment principles.
-                </p>
-              </div>
-            </div>
-
-            <div className="timeline-item right" data-aos="fade-left">
-              <div className="timeline-content p-4 rounded-4 shadow-sm">
-                <h6 className="fw-bold text-success">Step 2: Proposal</h6>
-                <p className="text-muted small mb-0">
-                  We present transparent investment options and partnership
-                  models.
-                </p>
-              </div>
-            </div>
-
-            <div className="timeline-item left" data-aos="fade-right">
-              <div className="timeline-content p-4 rounded-4 shadow-sm">
-                <h6 className="fw-bold text-success">Step 3: Execution</h6>
-                <p className="text-muted small mb-0">
-                  Our team manages operations efficiently under Shariah
-                  compliance.
-                </p>
-              </div>
-            </div>
-
-            <div className="timeline-item right" data-aos="fade-left">
-              <div className="timeline-content p-4 rounded-4 shadow-sm">
-                <h6 className="fw-bold text-success">
-                  Step 4: Profit Distribution
-                </h6>
-                <p className="text-muted small mb-0">
-                  Profits are shared transparently — with regular updates and
-                  complete accountability.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-5" data-aos="zoom-in">
-          <div className="p-5 bg-success bg-opacity-10 rounded-4 shadow-sm">
-            <h4 className="fw-bold text-success mb-3">
-              Ready to Begin Your Halal Growth Journey?
-            </h4>
-            <p className="text-muted mb-4">
-              Join <strong>Hajiyar Halal Profits</strong> today and be part of a
-              community that grows with integrity and faith.
-            </p>
+              Design my portfolio
+            </Link>
             <a
-              href="/contact"
-              className="btn btn-success px-4 py-2 rounded-pill shadow-sm"
+              href="https://wa.me/919150049753"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center rounded-full border border-brand-200 px-6 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-50"
             >
-              Contact Us
+              Chat on WhatsApp
             </a>
           </div>
         </div>
+      </section>
 
-        {/* 🌟 Service Highlights Carousel */}
-        <div className="mt-5 py-5" data-aos="fade-up">
-          <h3 className="fw-bold text-success text-center mb-4">
-            Service Highlights
-          </h3>
-          <div
-            id="serviceHighlightsCarousel"
-            className="carousel slide"
-            data-bs-ride="carousel"
-          >
-            <div className="carousel-inner rounded-4 shadow-sm">
-              <div className="carousel-item active">
-                <div className="p-5 text-center bg-light">
-                  <i className="bi bi-cash-stack text-success fs-1 mb-3"></i>
-                  <h5 className="fw-semibold">Ethical Wealth Building</h5>
-                  <p className="text-muted">
-                    Our financial plans are 100% interest-free and crafted to
-                    ensure responsible profit growth under Islamic principles.
-                  </p>
-                </div>
+      <section className="mx-auto max-w-6xl px-5 lg:px-6">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {offerings.map((service) => (
+            <div
+              key={service.title}
+              className="rounded-3xl border border-slate-100 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:border-brand-200"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50">
+                {service.icon}
               </div>
-              <div className="carousel-item">
-                <div className="p-5 text-center bg-light">
-                  <i className="bi bi-people text-success fs-1 mb-3"></i>
-                  <h5 className="fw-semibold">Community-Driven Projects</h5>
-                  <p className="text-muted">
-                    Every project is designed to empower the community through
-                    jobs, skill development, and shared prosperity.
-                  </p>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="p-5 text-center bg-light">
-                  <i className="bi bi-globe text-success fs-1 mb-3"></i>
-                  <h5 className="fw-semibold">Expanding Global Reach</h5>
-                  <p className="text-muted">
-                    We’re partnering with international halal ventures to take
-                    your investments beyond borders — safely and transparently.
-                  </p>
-                </div>
-              </div>
+              <h3 className="mt-5 text-xl font-semibold text-slate-900">{service.title}</h3>
+              <p className="mt-2 text-sm text-slate-500">{service.detail}</p>
             </div>
-
-            {/* Carousel Controls */}
-            <button
-              className="carousel-control-prev"
-              type="button"
-              data-bs-target="#serviceHighlightsCarousel"
-              data-bs-slide="prev"
-            >
-              <span className="carousel-control-prev-icon bg-success rounded-circle p-2"></span>
-            </button>
-            <button
-              className="carousel-control-next"
-              type="button"
-              data-bs-target="#serviceHighlightsCarousel"
-              data-bs-slide="next"
-            >
-              <span className="carousel-control-next-icon bg-success rounded-circle p-2"></span>
-            </button>
-          </div>
+          ))}
         </div>
+      </section>
 
-        {/* 💬 FAQ Section */}
-        <div className="faq-section my-5 py-5" data-aos="fade-up">
-          <h3 className="fw-bold text-success text-center mb-4">
-            Frequently Asked Questions
-          </h3>
-          <div className="accordion" id="faqAccordion">
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="faqOne">
-                <button
-                  className="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  Is Hajiyar Halal Profits fully Shariah-compliant?
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                className="accordion-collapse collapse show"
-                aria-labelledby="faqOne"
-                data-bs-parent="#faqAccordion"
-              >
-                <div className="accordion-body text-muted">
-                  Yes. Every business operation, partnership, and investment
-                  model is reviewed and approved under certified Islamic finance
-                  principles.
+      <section className="bg-white py-16">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-2 lg:px-6">
+          <div className="space-y-4">
+            <p className="text-xs font-semibold uppercase text-brand-600">
+              Proven workflow
+            </p>
+            <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
+              A guided process that removes guesswork.
+            </h2>
+            <p className="text-slate-600">
+              Each phase is managed by a dedicated pod—compliance, build, payments, and partner
+              success—so you always know who is accountable.
+            </p>
+            <div className="space-y-4 rounded-3xl border border-slate-100 bg-slate-50 p-6">
+              {process.map((step, idx) => (
+                <div key={step.title} className="flex gap-4">
+                  <span className="mt-1 text-sm font-semibold text-brand-600">
+                    {`0${idx + 1}`}
+                  </span>
+                  <div>
+                    <p className="text-base font-semibold text-slate-900">{step.title}</p>
+                    <p className="text-sm text-slate-500">{step.desc}</p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="faqTwo">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  What kind of returns can I expect?
-                </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                className="accordion-collapse collapse"
-                aria-labelledby="faqTwo"
-                data-bs-parent="#faqAccordion"
-              >
-                <div className="accordion-body text-muted">
-                  Our projects focus on stable, ethical growth. Returns vary per
-                  project and are distributed transparently — without fixed
-                  interest.
+          </div>
+          <div className="rounded-3xl border border-slate-100 bg-slate-900 p-8 text-white shadow-soft">
+            <p className="text-xs uppercase tracking-[0.5em] text-brand-200">Impact metrics</p>
+            <div className="mt-6 grid gap-6">
+              {[
+                { label: "Cumulative investor IRR", value: "18.4%" },
+                { label: "Projects with zero delay", value: "92%" },
+                { label: "Scholar audits per year", value: "24" },
+                { label: "NPS (partner happiness)", value: "72" },
+              ].map((metric) => (
+                <div key={metric.label}>
+                  <p className="text-xs uppercase tracking-[0.4em] text-white/70">
+                    {metric.label}
+                  </p>
+                  <p className="text-3xl font-semibold">{metric.value}</p>
                 </div>
-              </div>
-            </div>
-
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="faqThree">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  Can I invest from outside India?
-                </button>
-              </h2>
-              <div
-                id="collapseThree"
-                className="accordion-collapse collapse"
-                aria-labelledby="faqThree"
-                data-bs-parent="#faqAccordion"
-              >
-                <div className="accordion-body text-muted">
-                  Absolutely. We work with global partners and can guide you
-                  through compliance and documentation for safe cross-border
-                  halal investments.
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 lg:px-6">
+        <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-card">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
+            <div className="flex-1 space-y-3">
+              <p className="text-xs font-semibold uppercase text-brand-600">
+                Sector pods
+              </p>
+              <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
+                Specialists for every track we build in.
+              </h2>
+              <p className="text-slate-600">
+                Each pod owns research, compliance, and operations for its niche, ensuring that a
+                villa township receives the same obsessive care as an agro venture.
+              </p>
+            </div>
+            <div className="grid flex-1 gap-4 sm:grid-cols-2">
+              {[
+                {
+                  title: "Premium Residences",
+                  info: "Architects, cost engineers, and lifestyle curators for villa clusters.",
+                },
+                {
+                  title: "Agro & Regenerative",
+                  info: "Agronomists and supply-chain leads driving farm-to-market playbooks.",
+                },
+                {
+                  title: "Commercial & Co-warehousing",
+                  info: "Lease modeling, anchor tenant sourcing, and asset management pros.",
+                },
+                {
+                  title: "Digital & Community Ventures",
+                  info: "Operators who incubate women-led micro businesses and learning hubs.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                  <p className="text-sm font-semibold text-slate-900">{item.title}</p>
+                  <p className="mt-2 text-xs text-slate-500">{item.info}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 lg:px-6">
+        <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-card md:p-12">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-center">
+            <div className="flex-1 space-y-4">
+              <p className="text-xs font-semibold uppercase text-brand-600">
+                Voices
+              </p>
+              <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
+                Partners who now treat us as their in-house halal desk.
+              </h2>
+            </div>
+            <div className="grid flex-1 gap-6 sm:grid-cols-2">
+              {testimonials.map((item) => (
+                <div
+                  key={item.name}
+                  className="rounded-3xl border border-slate-100 bg-slate-50 p-5"
+                >
+                  <MessageCircle className="h-5 w-5 text-brand-600" />
+                  <p className="mt-3 text-sm text-slate-600">“{item.quote}”</p>
+                  <p className="mt-4 text-sm font-semibold text-slate-900">{item.name}</p>
+                  <p className="text-xs uppercase tracking-[0.4em] text-brand-500">{item.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-900 py-16 text-white">
+        <div className="mx-auto max-w-6xl px-5 lg:px-6">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
+            <div className="flex-1">
+              <p className="text-xs font-semibold uppercase text-brand-200">
+                FAQ
+              </p>
+              <h2 className="text-3xl font-semibold md:text-4xl">Clarity before commitment.</h2>
+              <p className="mt-3 text-slate-300">
+                We answer every question—even the hard ones—before you sign a single paper.
+              </p>
+            </div>
+            <div className="flex-1 space-y-4">
+              {faqs.map((faq) => (
+                <details
+                  key={faq.q}
+                  className="group rounded-3xl border border-white/15 bg-white/5 p-4 shadow-soft"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold">
+                    {faq.q}
+                    <ArrowRight className="h-4 w-4 transition group-open:rotate-90" />
+                  </summary>
+                  <p className="mt-3 text-sm text-slate-200">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 lg:px-6">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-card">
+            <p className="text-xs font-semibold uppercase text-brand-600">
+              Ready to co-build?
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-slate-900">
+              Book a 30-minute blueprint session.
+            </h2>
+            <p className="mt-3 text-slate-600">
+              We evaluate current assets, identify riba exposure, and draft a halal-first plan.
+            </p>
+            <Link
+              to="/contact"
+              className="mt-6 inline-flex items-center rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-brand-700"
+            >
+              Schedule a call
+            </Link>
+          </div>
+          <div className="rounded-3xl border border-slate-100 bg-gradient-to-br from-brand-600 to-emerald-600 p-8 text-white shadow-soft">
+            <p className="text-xs uppercase text-white/60">By the numbers</p>
+            <div className="mt-6 grid gap-6 sm:grid-cols-3">
+              {[
+                { label: "Projects delivered", value: 48, suffix: "+" },
+                { label: "Families onboarded", value: 1000, suffix: "+" },
+                { label: "Cities served", value: 9, suffix: "" },
+              ].map((item) => (
+                <div key={item.label}>
+                  <p className="text-3xl font-semibold">
+                    <CountUp end={item.value} suffix={item.suffix} duration={2} />
+                  </p>
+                  <p className="text-xs uppercase tracking-[0.4em] text-white/65">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-white/80">
+              Need something custom? We love solving unstructured problems. Drop us a line and we’ll
+              assemble a solution pod.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 lg:px-6">
+        <div className="overflow-hidden rounded-3xl bg-slate-900 p-10 text-white shadow-soft">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center">
+            <div className="flex-1 space-y-4">
+              <p className="text-xs uppercase text-white/60">Work with us</p>
+              <h2 className="text-3xl font-semibold md:text-4xl">
+                Build something beautiful, ethical, and enduring.
+              </h2>
+              <p className="text-sm text-slate-300">
+                Start with a discovery call. We map your goals, evaluate ongoing assets, and craft a
+                halal-first roadmap.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg transition hover:bg-slate-100"
+              >
+                Book a conversation
+              </Link>
+              <a
+                href="https://wa.me/919150049753"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                WhatsApp our concierge
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
 
 export default Services;
+
